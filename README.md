@@ -36,6 +36,13 @@ fcd1787c38ca296481c5b55c89e1950c55048ef9cb288460e4fad586c3fa463b
 Or run it manually:
 
 ```bash
-docker run -e ssl=tls12 -p 4443:443 --rm -it ssldumm
+docker run -e ssl=tls12 -p 4443:443 --rm -it ssldummy
 ```
 
+## What is required
+
+For this to work, we require OpenSSL in a sufficiently old version to still function with SSLv2 (e.g. 1.0.1e fips).
+
+We also need at least Python 2.7.9 which supports SSLv2, v3, and all three versions of TLS.
+
+Both in combination can be found in CentOS 7.
