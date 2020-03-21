@@ -6,7 +6,7 @@ start() {
     docker run -e ssl=$i -p $port:443 -d ssldummy
     ((port++))
   done
-  test $# -eq 0 && start ssl2 ssl3 ssl23 tls1 tls11 tls12
+  test $# -eq 0 && start ssl2 ssl3 ssl23 tls1 tls11 tls12 tls13
 }
 
 stop() {
@@ -24,10 +24,9 @@ case $cmd in
     start $@
     ;;
   stop)
-    stop 
+    stop
     ;;
   *)
     echo "Unknown command $cmd, try start or stop"
     exit 1
 esac
-
